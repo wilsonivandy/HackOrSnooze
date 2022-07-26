@@ -19,6 +19,25 @@
 
 /* Individual stories */
 
+.star,
+.trash-can {
+  font-size: 0.75rem;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.fas {
+  color: blue;
+}
+
+.far {
+  color: black;
+}
+
+.trash-can:hover {
+  color: blue;
+}
+
 .story-link {
   color: black;
   font-size: 0.85rem;

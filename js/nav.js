@@ -9,6 +9,8 @@
 function navAllStories(evt) {
   console.debug("navAllStories", evt);
   hidePageComponents();
+  $favoritedStories.hide();
+  $ownStories.hide();
   putStoriesOnPage();
 }
 
@@ -34,3 +36,29 @@ function updateNavOnLogin() {
   $navLogOut.show();
   $navUserProfile.text(`${currentUser.username}`).show();
 }
+
+function navSubmitClick(evt){
+  console.debug("navSubmitClick", evt);
+  hidePageComponents();
+  $allStoriesList.hide();
+  $createStoryForm.show();
+}
+
+$navSubmit.on("click", navSubmitClick);
+
+function navGetFavorites(evt){
+  console.debug("navGetFavorites", evt);
+  hidePageComponents();
+  putFavorites();
+}
+
+$body.on("click", "#nav-favorites", navGetFavorites);
+
+function navMyStories(evt){
+  console.debug("navMyStories", evt);
+  hidePageComponents();
+  putOwnStoriesOnPage();
+  $ownStories.show();
+}
+
+$body.on("click", "#nav-my-stories", navMyStories);
